@@ -1,6 +1,7 @@
 package com.mosgirl.shop_mall.home.fragment;
 
 
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mosgirl.shop_mall.R;
@@ -32,18 +34,25 @@ public class HomeFragment extends BaseFragment {
 
     private final String TAG = HomeFragment.class.getSimpleName();
     private TextView tvTbSearch, tvTbMessage;
-    private RecyclerView rvHf;
+    private RecyclerView rvHome;
     private ImageView ivHfGoToTop;
-    private ResultBean.ResultDTO result;
+    private ResultBean.ResultDTO resultDTO;
+    private HomeFragmentAdapter adapter;
+    private Context mContext;
 
     @Override
     public View initView() {
         Log.d(TAG, "HomeFragment页面的fragment的ui被初始化");
         View view = View.inflate(context, R.layout.home_fragment, null);
         tvTbSearch = view.findViewById(R.id.tv_tb_search);
-        rvHf = view.findViewById(R.id.rv_hf);
+        rvHome = view.findViewById(R.id.rv_hf);
         ivHfGoToTop = view.findViewById(R.id.iv_hf_go_to_top);
         tvTbMessage = view.findViewById(R.id.tv_tb_message);
+        mContext = getContext();
+        adapter = new HomeFragmentAdapter(mContext, resultDTO);
+        rvHome.setAdapter(adapter);
+        //设置布局管理者
+        rvHome.setLayoutManager(new GridLayoutManager(mContext, 1));
         initListeners();
         return view;
     }
@@ -51,7 +60,7 @@ public class HomeFragment extends BaseFragment {
     private void initListeners() {
         ivHfGoToTop.setOnClickListener(view -> {
             //回到顶部
-            rvHf.scrollToPosition(0);
+            rvHome.scrollToPosition(0);
         });
         //搜索的监听
         tvTbSearch.setOnClickListener(view -> {
@@ -73,6 +82,7 @@ public class HomeFragment extends BaseFragment {
                 Log.i(TAG, TAG + "--get response failure", e);
             }
 
+//            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Log.d(TAG, TAG + "--get response success,response:" + response);
@@ -80,8 +90,19 @@ public class HomeFragment extends BaseFragment {
                 assert responseBody != null;
                 Log.d(TAG, TAG + "--get response success,responseBody:" + responseBody);
                 ResultBean resultBean = JsonParseUtil.parseToBean(ResultBean.class, responseBody.string());
-                result = resultBean.getResult();
-                Log.d(TAG, TAG + "-解析成功result:" +result.getHotInfo().get(0).getName());
+                resultDTO = resultBean.getResult();
+                Log.d(TAG, TAG + "-解析成功result:" + resultDTO.getHotInfo().get(0).getName());
+                if (resultDTO != null) {
+//                    adapter = new HomeFragmentAdapter(mContext, resultDTO);
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            adapter.setResultDTO(resultDTO);
+                            adapter.notifyDataSetChanged();
+                        }
+                    });
+                }
+
             }
         });
     }
