@@ -16,8 +16,8 @@
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/search"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"/>
+        android:src="@drawable/top_btn"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="5dp"/>
 
 </RelativeLayout>

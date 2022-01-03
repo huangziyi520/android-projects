@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.mosgirl.shop_mall.R;
 import com.mosgirl.shop_mall.base.BaseFragment;
 import com.mosgirl.shop_mall.home.bean.ResultBean;
+import com.mosgirl.shop_mall.home.fragment.adapter.HomeFragmentAdapter;
 
 import java.io.IOException;
 
@@ -52,7 +53,20 @@ public class HomeFragment extends BaseFragment {
         adapter = new HomeFragmentAdapter(mContext, resultDTO);
         rvHome.setAdapter(adapter);
         //设置布局管理者
-        rvHome.setLayoutManager(new GridLayoutManager(mContext, 1));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 1);
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if (position <= 4) {
+                    ivHfGoToTop.setVisibility(View.GONE);
+                } else {
+                    ivHfGoToTop.setVisibility(View.VISIBLE);
+                }
+                return 1;
+            }
+        });
+        rvHome.setLayoutManager(gridLayoutManager);
+        rvHome.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
         initListeners();
         return view;
     }
@@ -60,6 +74,7 @@ public class HomeFragment extends BaseFragment {
     private void initListeners() {
         ivHfGoToTop.setOnClickListener(view -> {
             //回到顶部
+            Toast.makeText(context, "回到顶部", Toast.LENGTH_SHORT).show();
             rvHome.scrollToPosition(0);
         });
         //搜索的监听
@@ -82,7 +97,7 @@ public class HomeFragment extends BaseFragment {
                 Log.i(TAG, TAG + "--get response failure", e);
             }
 
-//            @SuppressLint("NotifyDataSetChanged")
+            //            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Log.d(TAG, TAG + "--get response success,response:" + response);
