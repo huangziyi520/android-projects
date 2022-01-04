@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_goods_info_more_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/tv_more_layout_sharding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/icon_sharding"
+        android:text="分享"/>
+    <TextView
+        android:id="@+id/tv_more_layout_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/icon_search"
+        android:text="搜索"/>
+    <TextView
+        android:id="@+id/tv_more_layout_home_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/icon_home_page"
+        android:text="首页"/>
+</LinearLayout>

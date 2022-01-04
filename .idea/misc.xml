@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/drawable/background_color_red.xml" value="0.378125" />
+        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/drawable/collection_background.xml" value="0.378125" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26510416666666664" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/drawable/search_home_shape.xml" value="0.26510416666666664" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/drawable/time_shape.xml" value="0.2598958333333333" />
-        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/acitvity_goods_info.xml" value="0.17239583333333333" />
+        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/acitvity_goods_info.xml" value="0.1" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/act_item.xml" value="0.3442028985507246" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/channel_item.xml" value="0.2390625" />
@@ -15,12 +17,14 @@
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/item_channel.xml" value="0.22" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/item_hot_grid_view.xml" value="0.17603850050658562" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/item_recommend_grid_view.xml" value="0.3432971014492754" />
-        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/item_seckill.xml" value="0.1" />
+        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/item_seckill.xml" value="0.22" />
+        <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/more_layout.xml" value="0.358695652173913" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/recommend_item.xml" value="0.3432971014492754" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/seckill_item.xml" value="0.5" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/test.xml" value="0.234375" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/title_bar.xml" value="0.5" />
         <entry key="..\:/android-studio/projects-application/Shopmall/app/src/main/res/layout/welcome.xml" value="0.2708333333333333" />
+        <entry key="..\:/android-studio/projects-application/Shopmall/banner/src/main/res/drawable/black_background.xml" value="0.378125" />
         <entry key="..\:/android-studio/projects-application/Shopmall/banner/src/main/res/layout/banner.xml" value="0.12864583333333332" />
         <entry key="..\:/android-studio/projects-application/Shopmall/banner/src/main/res/layout/banner_viewpager.xml" value="0.2203125" />
         <entry key="..\:/android-studio/projects-application/Shopmall/banner/src/main/res/layout/channel_item.xml" value="0.348731884057971" />

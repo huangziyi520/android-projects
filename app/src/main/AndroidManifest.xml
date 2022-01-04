@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Shopmall">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/net_work_security_config" />
+            android:resource="@xml/actions" />
 
         <activity
             android:name=".activity.WelcomeActivity"

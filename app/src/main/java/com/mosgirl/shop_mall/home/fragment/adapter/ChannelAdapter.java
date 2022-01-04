@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.mosgirl.shop_mall.R;
@@ -64,12 +63,12 @@ public class ChannelAdapter extends BaseAdapter {
         Glide.with(context).load(Constants.IMAGE_URL + channelInfoDTO.getImage()).into(viewHolder.getIgChannel());
         //设置文本
         viewHolder.getTvChannel().setText(channelInfoDTO.getChannelName());
-        viewHolder.getIgChannel().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, "频道点击了" + i, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        viewHolder.getIgChannel().setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(context, "频道点击了" + i, Toast.LENGTH_SHORT).show();
+//            }
+//        });
         return view;
     }
 
